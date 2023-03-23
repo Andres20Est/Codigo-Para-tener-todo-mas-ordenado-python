@@ -1,0 +1,33 @@
+#%% Librerias y limpiado pantalla
+#import numpy as np
+#from time import sleep
+#print('\014')
+#%% Se inicializan las opciones
+def Punto_1():
+    print('Punto 1')
+    global Salida
+    Salida = 'Aqui haces tu operación'    
+def Punto_2():
+    print('Punto 2')
+    
+def Punto_3():
+    print('Punto 3')
+
+def Punto_4():
+    print('Punto 4')
+    
+#%% Diccionario  Entrada : (Texto, Nombre Funcion)
+opciones = {
+    '1': ('Punto 1', Punto_1),
+    '2': ('Punto 2', Punto_2),
+    '3': ('Punto 3', Punto_3),
+    '4': ('Punto 4', Punto_4),
+    }
+#%% Se muestran las opciones
+for i in sorted(opciones):
+    print(f' {i}) {opciones[i][0]}')
+#%% Se pide la entrada    
+while (a := input('Opción: ')) not in opciones:
+    print('Opción incorrecta, vuelva a intentarlo.')
+#%% Llamado a funcion    
+opciones[a][1]()
